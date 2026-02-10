@@ -1,0 +1,34 @@
+extends faucet-layout.pug
+
+block append head
+	title Faucet
+
+block formContent
+	h3 Minima tokens
+	p A free distribution of Minima tokens
+	ul
+		li For those who want to try out the Minima blockchain.
+		li This faucet distributes 0.0001 Minima each time, and resets every few minutes.
+		li Please note: the value of the distribution is very small indeed!
+	p It is possible to do this on the Minima blockchain because:
+	ul
+		li The cost of the transfer is as yet zero.
+		li People requesting the tokens only need a tiny amount to be able to try the blockchain.  e.g. a custom token can be created for less than a billionth of a Minima.
+
+	form(id="minimaFaucetForm" method="POST" action="/address-submit-minima")
+		input(type="text", id="minimaUserInput", placeholder="Address here", name="minimaUserAddress", required="true", pattern="[0M]{1}x[0-9A-Za-z]{1,64}")
+		button(type="submit" id="minimaButton") GIMME MINIMA
+		
+	script(src="/javascripts/faucet.js")
+
+	p#minimaSM=minimaStatusMessage
+	
+	br
+	br
+	p *To get an address from your node:
+	ul 
+		li Go to your node, and use the Wallet or Terminal MiniDapp, as follows:
+		ul
+			li - In Terminal, type "getAddress", or
+			li - In Wallet, press the 'burger' icon on the left to bring up the menu, and choose "Receive".
+		li And then copy the address, a long hexadecimal number starting "0x" or "Mx".
