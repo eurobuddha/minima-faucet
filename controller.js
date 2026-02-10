@@ -15,7 +15,7 @@ send_minima = function(req, res) {
 			res.render("faucet", {minimaStatusMessage: "*** Sorry, the faucet is still recharging.  The next coin will go to the first person who asks for it after " + cooldownRemaining + " seconds from now."});
 		} else {
 			minimaTimeNextValidRequest = Date.now() + (1000*60) + Math.floor(Math.random() * (1000*60));; // e.g. 1000ms x 60s x 5m.  Includes a minimum time, to allow for the preceding transaction to be confirmed and the coin to become spendable.
-			const nodeAddress = "http://minima9001:9005";
+			const nodeAddress = "http://localhost:9005";
 			let sendableAmount = 0;
 			let amount = 0;
 			let url = "";
