@@ -15,11 +15,11 @@ block formContent
 		li The cost of the transfer is as yet zero.
 		li People requesting the tokens only need a tiny amount to be able to try the blockchain.  e.g. a custom token can be created for less than a billionth of a Minima.
 
-	form(id="minimaFaucetForm" method="POST" action="/address-submit-minima")
+	form(id="minimaFaucetForm" method="POST" action="address-submit-minima")
 		input(type="text", id="minimaUserInput", placeholder="Address here", name="minimaUserAddress", required="true", pattern="[0M]{1}x[0-9A-Za-z]{1,64}")
 		button(type="submit" id="minimaButton") GIMME MINIMA
 		
-	script(src="/javascripts/faucet.js")
+	script(src="faucet.js")
 
 	p#minimaSM=minimaStatusMessage
 	
